@@ -1,3 +1,4 @@
+// Copyright 2023 Huda Sajjad
 #include <string.h>
 #include "ex1.h"
 
@@ -10,13 +11,11 @@ There are two different ways to iterate through a string.
 int num_occurrences(char *str, char letter) {
     /* TODO: implement num_occurances */
     int num = strlen(str);
-    int count =0;
-    for (int i=0; i<num; i++)
-    {
-    	if( str[i] == letter)
-    	{
-    		count += 1;
-    	}
+    int count = 0;
+    for (int i = 0; i < num; i++) {
+        if (str[i] == letter) {
+            count += 1;
+        }
     }
     return count;
 }
@@ -26,9 +25,9 @@ Each sequence will end with a NULL terminator and will have up to 20 nucleotides
 All letters will be upper case. */
 void compute_nucleotide_occurrences(DNA_sequence *dna_seq) {
     /* TODO: implement compute_nucleotide_occurances */
-    dna_seq->A_count = num_occurrences(dna_seq->sequence,'A');
-    dna_seq->C_count = num_occurrences(dna_seq->sequence,'C');
-    dna_seq->T_count = num_occurrences(dna_seq->sequence,'T');
-    dna_seq->G_count = num_occurrences(dna_seq->sequence,'G');
+    dna_seq->A_count = num_occurrences(dna_seq->sequence, 'A');
+    dna_seq->C_count = num_occurrences(dna_seq->sequence, 'C');
+    dna_seq->T_count = num_occurrences(dna_seq->sequence, 'T');
+    dna_seq->G_count = num_occurrences(dna_seq->sequence, 'G');
     return;
 }
