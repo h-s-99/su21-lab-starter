@@ -1,5 +1,6 @@
-#include <string.h>
+// Copyright 2023 Huda Sajjad
 #include "pwd_checker.h"
+#include <string.h>
 #include <assert.h>
 
 /*
