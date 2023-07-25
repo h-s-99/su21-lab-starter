@@ -1,3 +1,4 @@
+// Copyright 2023 Huda Sajjad
 /* Include the system headers we need */
 #include <stdlib.h>
 #include <stdio.h>
@@ -52,7 +53,7 @@ vector_t also_bad_vector_new() {
 
 /* Create a new vector with a size (length) of 1 and set its single component to zero... the
    right way */
-/* TODO: uncomment the code that is preceded by // */
+// uncomment the code that is preceded by //
 vector_t *vector_new() {
     /* Declare what this function will return */
     vector_t *retval;
@@ -73,7 +74,7 @@ vector_t *vector_new() {
 
     /* Check the data attribute of our vector to make sure we got memory */
     if (retval->data == NULL) {
-        free(retval);				//Why is this line necessary?
+        free(retval);                // Why is this line necessary?
         allocation_failed();
     }
 
@@ -86,9 +87,8 @@ vector_t *vector_new() {
 
 /* Return the value at the specified location/component "loc" of the vector */
 int vector_get(vector_t *v, size_t loc) {
-
     /* If we are passed a NULL pointer for our vector, complain about it and exit. */
-    if(v == NULL) {
+    if (v == NULL) {
         fprintf(stderr, "vector_get: passed a NULL vector.\n");
         abort();
     }
@@ -97,14 +97,12 @@ int vector_get(vector_t *v, size_t loc) {
      * Otherwise, return what is in the passed location.
      */
     /* YOUR CODE HERE */
-    if(loc >= v->size) {
+    if (loc >= v->size) {
         return 0;
-    }
-    else {
+    } else {
         return v->data[loc];
     }
 }
-    
 
 /* Free up the memory allocated for the passed vector.
    Remember, you need to free up ALL the memory that was allocated. */
@@ -119,17 +117,15 @@ void vector_set(vector_t *v, size_t loc, int value) {
     /* What do you need to do if the location is greater than the size we have
      * allocated?  Remember that unset locations should contain a value of 0.
      */
-    if (loc >= v->size)
-    {
+    if (loc >= v->size) {
         size_t tmp = v->size;
         v->size = loc + 1;
         v->data = realloc(v->data, sizeof(int)*(loc + 1));
         if (v->data == NULL) {
-            free(v);				//Why is this line necessary?
+            free(v);                // Why is this line necessary?
             allocation_failed();
         }
-        for (int i=tmp; i<loc; i++)
-        {
+        for (int i = tmp; i < loc; i++) {
             v->data[i] = 0;
         }
     }
