@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
 
     int num_z = num_occurrences(str, 'z');
     assert(num_z == 0);
-    
+
     int num_space = num_occurrences(str, ' ');
     assert(num_space == 1);
 
