@@ -1,7 +1,7 @@
 .import lotsofaccumulators.s
 
 .data
-inputarray: .word 1,2,3,4,5,6,7,0
+inputarray: .word 0,1,2,3,4,5,6,7,0
 TestPassed: .asciiz "Test Passed!"
 TestFailed: .asciiz "Test Failed!"
 
@@ -19,10 +19,10 @@ main:
     addi t2, x0, 10
     addi sp, sp, -4
     sw t2, 0(sp)
-    jal accumulatorthree
+    jal accumulatorone
     lw t4, 0(sp)
     addi sp, sp, 4
-    li t0, 28
+    li t0, 0
     bne t4, s0, Fail
     bne t4, t2, Fail
     beq a0 t0 Pass
