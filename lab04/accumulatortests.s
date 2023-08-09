@@ -19,7 +19,7 @@ main:
     addi t2, x0, 10
     addi sp, sp, -4
     sw t2, 0(sp)
-    jal accumulatorone
+    jal accumulatorfive
     lw t4, 0(sp)
     addi sp, sp, 4
     li t0, 0
